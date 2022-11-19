@@ -234,7 +234,7 @@ bus.$on（'toFooter',（data）=>{
 
 props ===> methods ===> data ===> computed ===> watch
 
-13.Vuex有哪些属性
+#### 13.Vuex有哪些属性
 
 state、getters、mutations、actions、modules
 
@@ -247,6 +247,68 @@ mutations：类似于组件中methods
 actions：提交mutations的
 
 modules：把以上4个属性再细分，让仓库更好管理
+
+![66885948394](面试题截图/1668859483947.png)
+
+![66885967658](面试题截图/1668859676587.png)
+
+![66886022248](面试题截图/1668860222483.png)
+
+![66886028823](面试题截图/1668860288234.png)
+
+#### 14.Vuex是单向数据流还是双向数据流
+
+vuex是单向数据流
+
+#### 15.Vuex中的mutaioons和actions区别
+
+mutations：都是同步事务（一个变另外一个不变）
+
+actions：可以包含任意异步操作（一个变另外一个也变）
+
+在vue调试中可以看出来
+
+#### 16.Vuex如何做持久化存储
+
+Vuex本身不是持久化存储
+
+![66886143912](面试题截图/1668861439129.png)
+
+1.使用localStorage自己写
+
+2.使用vuex-persist插件
+
+vue设置代理解决跨域问题
+
+#### 17.Vue项目打包上线
+
+1.自测==>修改路由模式
+
+2.代理不生效，使用ENV
+
+3.修改路径
+
+![66886244390](面试题截图/1668862443900.png)
+
+#### 18.Vue路由模式
+
+路由模式有两种:history ,hash
+
+区别：
+
+1表现形态不同
+
+​     history：http：//localhost：8080/about
+
+​     hash：http：//localhost：8080/#/about
+
+2.跳转请求
+
+​	history：http：//localhost：8080/id  ===>发送请求
+
+​         hash：不会发送请求
+
+3.打包后前端自测要使用hash，如果使用history会出现空白页
 
 
 
