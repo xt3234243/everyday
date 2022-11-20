@@ -310,5 +310,104 @@ vue设置代理解决跨域问题
 
 3.打包后前端自测要使用hash，如果使用history会出现空白页
 
+#### 19.介绍一下SPA以及SPA有什么缺点
+
+SPA是什么？
+
+单页面应用
+
+缺点：
+
+1.SEO优化不好
+
+2.性能不是特别好
+
+#### 20.Vue路径传值
+
+1.显式                                                                                                      
+
+http://localhost:8080/about?a=1
+
+1.1传：this.$router.push（{
+
+​		path：‘/about’,
+
+​		query：{
+
+​				a：1
+
+}
+
+}）
+
+1.2接：this.$route.query.a
+
+2.隐式
+
+http://localhost:8080/about
+
+2.1 传：
+
+this.$router.push（{
+
+​		path：‘About’,
+
+​		query：{
+
+​				a：1
+
+}
+
+}）
+
+2.2接：this.$route.params.a
+
+#### 21.路由导航守卫有哪些
+
+全局、路由独享、组件内
+
+1.全局
+
+beforeEach、beforeResolve、afterEach
+
+2.路由独享
+
+beforeEnter
+
+3.组件内
+
+  beforeRouteEnter、beforeRouteUpdate、beforeRouteLeave
+
+使用场景：判断是否登录,如果登录就next否则就跳转到登陆页面
+
+22.Vue动态路由
+
+场景：详情页（文章、商品）
+
+router.js配置
+
+~~~js
+{
+    path：”/list“,
+     name：‘List’,
+        children：[
+        {
+            path：‘/list/：id’,
+            name：‘Details’,
+            component：（）=>
+            	import（‘../view/Details.vue’），
+            
+        }
+    ]   ，
+           component：（）=>
+            	import（‘../view/List.vue’），
+
+}
+~~~
+
+
+
+
+
 
 
